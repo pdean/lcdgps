@@ -34,9 +34,11 @@ proc compass {a} {
 # screens
 
 package require tmr
+package require loc
 
 proc definescreens {} {
     tmr definescreen
+    loc definescreen
 }
 
 proc updatescreen {tpv} {

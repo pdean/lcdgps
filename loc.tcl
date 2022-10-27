@@ -15,34 +15,36 @@ oo::objdefine loc {
         set file nav.kml
         set loaded [my makedb $file]
 
-        set findnext [db prepare {
-            SELECT name, 
-                   description,
-                   s.geog <-> p.geog as dist,
-                   degrees(ST_Azimuth(p.geog, s.geog)) as brg 
-            FROM
-                nav.point as s
-                CROSS JOIN
-                (SELECT
-                    ST_Setsrid(ST_Point(:lon,:lat),4283)::geography as geog) as p
-            WHERE cosd(degrees(ST_Azimuth(p.geog, s.geog)) - :track) >= 0.0
-            ORDER by dist
-            LIMIT 1
-        }]
+        if {$loaded} {
+            set findnext [db prepare {
+                SELECT name, 
+                       description,
+                       s.geog <-> p.geog as dist,
+                       degrees(ST_Azimuth(p.geog, s.geog)) as brg 
+                FROM
+                    nav.point as s
+                    CROSS JOIN
+                    (SELECT
+                        ST_Setsrid(ST_Point(:lon,:lat),4283)::geography as geog) as p
+                WHERE cosd(degrees(ST_Azimuth(p.geog, s.geog)) - :track) >= 0.0
+                ORDER by dist
+                LIMIT 1
+            }]
 
-        set findclose [db prepare {
-            SELECT name, 
-                   description,
-                   s.geog <-> p.geog as dist,
-                   degrees(ST_Azimuth(p.geog, s.geog)) as brg 
-            FROM
-                nav.point as s
-                CROSS JOIN
-                (SELECT
-                    ST_Setsrid(ST_Point(:lon,:lat),4283)::geography as geog) as p
-            ORDER by dist
-            LIMIT 1
-        }]
+            set findclose [db prepare {
+                SELECT name, 
+                       description,
+                       s.geog <-> p.geog as dist,
+                       degrees(ST_Azimuth(p.geog, s.geog)) as brg 
+                FROM
+                    nav.point as s
+                    CROSS JOIN
+                    (SELECT
+                        ST_Setsrid(ST_Point(:lon,:lat),4283)::geography as geog) as p
+                ORDER by dist
+                LIMIT 1
+            }]
+        }
     }
 
     method makedb {file} {
@@ -97,15 +99,15 @@ oo::objdefine loc {
         dict with tpv {
             if {[info exists mode]} {
                 if {$mode >= 2} {
-                    lassign [$pt2ch allrows [dict create lat $lat lon $lon]] res
+                    lassign [$findnext allrows \
+                        [dict create lat $lat lon $lon track $track]] res
                     dict with res {}
-                    lassign [split $time T] date time
-                    lassign [split $description |] sec desc
-                    set chos [format "%.3f km  %.0f m" $ch $os]
-                    lcd puts "widget_set $scr ${scr}1 1 1 {$time}"
-                    lcd puts "widget_set $scr ${scr}2 1 2 {$desc}"
-                    lcd puts "widget_set $scr ${scr}3 1 3 {$sec}"
-                    lcd puts "widget_set $scr ${scr}4 1 4 {$chos}"
+                    set vehicle [format "%.0f m/s  %s" $speed compass($track)]
+                    set point [format "%.0f m %s" $dist compass($brg)]
+                    lcd puts "widget_set $scr ${scr}1 1 1 {$vehicle}"
+                    lcd puts "widget_set $scr ${scr}2 1 2 {$name}"
+                    lcd puts "widget_set $scr ${scr}3 1 3 {$description}"
+                    lcd puts "widget_set $scr ${scr}4 1 4 {$point}"
                 } else {
                     lcd puts "widget_set $scr ${scr}1 1 1 NO"
                     lcd puts "widget_set $scr ${scr}2 1 2 FIX"
@@ -135,4 +137,4 @@ oo::objdefine loc {
 
 }
 
-
+package provide loc 1.0
