@@ -1,9 +1,10 @@
 # lcdgps
 requires 
 raspberry pi, 
-[lcdproc](https://github.com/lcdproc/lcdproc),
-[gpsd](https://gpsd.gitlab.io/gpsd/client-howto.html),
-[evsieve](https://github.com/KarsMulder/evsieve),
 rotary encoder, 
+[evsieve](https://github.com/KarsMulder/evsieve),
+[lcdproc](https://github.com/lcdproc/lcdproc),
+gps mouse,
+[gpsd](https://gpsd.gitlab.io/gpsd/client-howto.html),
 postgis, 
 tcl
