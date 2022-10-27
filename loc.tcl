@@ -25,7 +25,7 @@ oo::objdefine loc {
                 CROSS JOIN
                 (SELECT
                     ST_Setsrid(ST_Point(:lon,:lat),4283)::geography as geog) as p
-            WHERE cosd(degrees(ST_Azimuth(p.geog, s.geog)) - :trk) >= 0.0
+            WHERE cosd(degrees(ST_Azimuth(p.geog, s.geog)) - :track) >= 0.0
             ORDER by dist
             LIMIT 1
         }]
