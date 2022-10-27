@@ -1,6 +1,7 @@
 # lcdgps
 requires 
 raspberry pi, 
+lcd 20x4,
 rotary encoder, 
 [evsieve](https://github.com/KarsMulder/evsieve),
 [lcdproc](https://github.com/lcdproc/lcdproc),
