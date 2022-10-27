@@ -4,7 +4,8 @@ Requires=lcdd.service gpsd.service
 After=lcdd.service gpsd.service
 
 [Service]
-ExecStart=/usr/bin/tclsh /home/peter/git/logs/lcdgps/lcdgps.tcl
+ExecStart=/usr/bin/tclsh /home/peter/git/lcdgps/lcdgps.tcl
+WorkingDirectory=/home/peter/git/lcdgps
 
 [Install]
 WantedBy=multi-user.target
