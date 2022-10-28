@@ -3,9 +3,9 @@
 
 package require tdom
 
-oo::object create loc
+oo::object create nav
 
-oo::objdefine loc {
+oo::objdefine nav {
 
     variable scr findnext findclose loaded file
 
@@ -137,4 +137,4 @@ oo::objdefine loc {
 
 }
 
-package provide loc 1.0
+package provide nav 1.0

@@ -34,11 +34,11 @@ proc compass {a} {
 # screens
 
 package require tmr
-package require loc
+package require nav
 
 proc definescreens {} {
     tmr definescreen
-    loc definescreen
+    nav definescreen
 }
 
 proc updatescreen {tpv} {
