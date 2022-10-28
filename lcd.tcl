@@ -31,7 +31,9 @@ oo::objdefine lcd {
             }
             ignore {
                 set Screen {}
-                #blue off
+                red off
+                blue off
+                green off
                 {*}$Onignore
             }
             success { }

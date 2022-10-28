@@ -12,7 +12,7 @@ oo::objdefine nav {
     method initvars {} {
 
         set scr [string trim [self] :]
-        set file nav.kml
+        set file /mnt/usb/nav.kml
         set loaded [my makedb $file]
 
         if {$loaded} {
@@ -102,6 +102,11 @@ oo::objdefine nav {
                     lassign [$findnext allrows \
                         [dict create lat $lat lon $lon track $track]] res
                     dict with res {}
+                    if {$dist < 100} {
+                        red blink
+                    } else {
+                        red off
+                    }
                     set vehicle [format "%.0f m/s  %s" $speed [ compass $track]]
                     set point [format "%.0f m %s" $dist [ compass $brg]]
                     lcd puts "widget_set $scr ${scr}1 1 1 {$vehicle}"
