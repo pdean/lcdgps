@@ -15,4 +15,4 @@ postgis,
 tcl
 
 
-![prototype](nav.jpg)
+![prototype](nav.png)
