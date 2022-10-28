@@ -102,8 +102,8 @@ oo::objdefine loc {
                     lassign [$findnext allrows \
                         [dict create lat $lat lon $lon track $track]] res
                     dict with res {}
-                    set vehicle [format "%.0f m/s  %s" $speed compass($track)]
-                    set point [format "%.0f m %s" $dist compass($brg)]
+                    set vehicle [format "%.0f m/s  %s" $speed [ compass $track]]
+                    set point [format "%.0f m %s" $dist [ compass $brg]]
                     lcd puts "widget_set $scr ${scr}1 1 1 {$vehicle}"
                     lcd puts "widget_set $scr ${scr}2 1 2 {$name}"
                     lcd puts "widget_set $scr ${scr}3 1 3 {$description}"
