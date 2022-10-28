@@ -13,3 +13,6 @@ gps mouse,
 [gpsd](https://gpsd.gitlab.io/gpsd/client-howto.html),
 postgis, 
 tcl
+
+
+![prototype](nav.jpg)
