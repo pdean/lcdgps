@@ -29,3 +29,5 @@ check offset in tmr
 tidy plugin setup
 
 add menu for enabling/disabling plugins
+
+or ini file?
