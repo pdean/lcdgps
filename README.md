@@ -9,7 +9,7 @@ leds,
 [piio](https://wiki.tcl-lang.org/page/piio),
 [evsieve](https://github.com/KarsMulder/evsieve),
 [lcdproc](https://github.com/lcdproc/lcdproc),
-gps mouse,
+gps mouse usb,
 [gpsd](https://gpsd.gitlab.io/gpsd/client-howto.html),
 postgis, 
 tcl
