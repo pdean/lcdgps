@@ -11,8 +11,8 @@ leds,
 [lcdproc](https://github.com/lcdproc/lcdproc),
 gps mouse usb,
 [gpsd](https://gpsd.gitlab.io/gpsd/client-howto.html),
-postgis, 
-tcl
+[postgis](http://www.refractions.net/products/postgis/), 
+[tcl](https://www.tcl.tk/)
 
 ## todo
 
