@@ -1,9 +1,9 @@
 # lcdgps
 requires 
 raspberry pi, 
-rtc,
-lcd 20x4,
-rotary encoder with button, 
+[rtc](https://www.adafruit.com/product/3295),
+[lcd 20x4](https://www.adafruit.com/product/198),
+[rotary encoder with button](https://www.adafruit.com/product/377), 
 extra button as menu button,
 leds,
 [piio](https://wiki.tcl-lang.org/page/piio),
