@@ -18,6 +18,10 @@ tcl
 
 fix service file - make sure usb is mounted
 
+check speed in nav
+
+check offset in tmr
+
 tidy plugin setup
 
 add menu for enabling/disabling plugins
