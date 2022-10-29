@@ -1,7 +1,7 @@
 # lcdgps
 requires 
 raspberry pi 4,
-preferable [arch linux](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4), 
+preferably [arch linux](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4), 
 [rtc](https://www.adafruit.com/product/3295),
 [lcd 20x4](https://www.adafruit.com/product/198),
 [rotary encoder with button](https://www.adafruit.com/product/377), 
