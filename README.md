@@ -14,7 +14,10 @@ gps mouse,
 postgis, 
 tcl
 
+## todo
 
-![prototype](pi.png)
-![schematic](lcdgps_bb.png)
-![insides](openbox.png)
+fix service file - make sure usb is mounted
+
+tidy plugin setup
+
+add menu for enabling/disabling plugins
