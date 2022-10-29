@@ -1,4 +1,4 @@
-[](https://pinout.xyz/#)
+[raspberry pi pinout](https://pinout.xyz/#)
 
 
 
