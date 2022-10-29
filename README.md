@@ -15,6 +15,9 @@ gps mouse usb,
 [postgis](http://www.refractions.net/products/postgis/), 
 [tcl](https://www.tcl.tk/)
 
+
+inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the code will make you vomit
+
 ## todo
 
 fix service file - make sure usb is mounted
