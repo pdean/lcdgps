@@ -16,4 +16,4 @@ tcl
 
 
 ![prototype](pi.png)
-![schematic](lcdgps_bb.pdf)
+![schematic](lcdgps_bb.png)
