@@ -1,4 +1,4 @@
-# point location
+# nav to nearest point in line of travel approx
 #
 
 package require tdom
