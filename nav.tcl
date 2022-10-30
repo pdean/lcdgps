@@ -102,6 +102,16 @@ oo::objdefine nav {
                     lassign [$findnext allrows \
                         [dict create lat $lat lon $lon track $track]] res
                     dict with res {}
+                    if {$dist < 300} {
+                        blue blink
+                    } else {
+                        blue off
+                    }
+                    if {$dist < 200} {
+                        green blink
+                    } else {
+                        green off
+                    }
                     if {$dist < 100} {
                         red blink
                     } else {
