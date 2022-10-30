@@ -41,15 +41,8 @@ proc definescreens {} {
     nav definescreen
 }
 
-proc updatescreen {tpv} {
-    set scr [lcd screen]
-    if {[string length $scr]} {
-        $scr updatescreen $tpv
-    }
-}
-
 # event loop
-#
+
 proc listen {} {
     gps poll
 }
@@ -58,6 +51,13 @@ proc ignore {} {
     gps stop
     foreach led [info class instances Led] {
         $led off
+    }
+}
+
+proc updatescreen {tpv} {
+    set scr [lcd screen]
+    if {[string length $scr]} {
+        $scr updatescreen $tpv
     }
 }
 
