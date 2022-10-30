@@ -1,6 +1,4 @@
-#!/usr/bin/env tclsh
-#
-# poll gpsd
+# gps
 
 package require json  
 
