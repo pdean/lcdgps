@@ -32,4 +32,3 @@ add menu for enabling/disabling plugins
 
 or ini file?
 
-turn off all leds

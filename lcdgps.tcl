@@ -49,6 +49,17 @@ proc updatescreen {tpv} {
 }
 
 # event loop
+#
+proc listen {} {
+    gps poll
+}
+
+proc ignore {} {
+    gps stop
+    foreach led [info class instances Led] {
+        $led off
+    }
+}
 
 proc init {} {
     lcd connect
@@ -56,8 +67,8 @@ proc init {} {
     gps repeat 125
     definescreens
     gps action  "updatescreen"
-    lcd onlisten "gps poll"
-    lcd onignore "gps stop"
+    lcd onlisten "listen"
+    lcd onignore "ignore"
 }
 
 after 0 init

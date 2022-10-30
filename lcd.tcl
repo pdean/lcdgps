@@ -26,14 +26,10 @@ oo::objdefine lcd {
             }
             listen {
                 set Screen [lindex $line 1]
-                #blue blink
                 {*}$Onlisten
             }
             ignore {
                 set Screen {}
-                red off
-                blue off
-                green off
                 {*}$Onignore
             }
             success { }
