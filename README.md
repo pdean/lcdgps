@@ -31,3 +31,5 @@ add plugin configs at top of lcdgps
 add menu for enabling/disabling plugins
 
 or ini file?
+
+turn off all leds
