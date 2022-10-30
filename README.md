@@ -30,3 +30,5 @@ add menu for enabling/disabling plugins
 
 or ini file?
 
+leds?
+
