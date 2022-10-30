@@ -3,6 +3,12 @@
 # lcdgps
 #
 
+# screens to display
+
+set screens [list nav tmr]
+
+# load modules
+
 lappend auto_path .
 package require lcd
 package require gps
@@ -31,14 +37,13 @@ proc compass {a} {
     return [lindex $tab [round [/ [fmod $a 360] 22.5]]]
 }
 
-# screens
-
-package require tmr
-package require nav
+# define screens
 
 proc definescreens {} {
-    tmr definescreen
-    nav definescreen
+    foreach scr $::screens {
+        package require $scr
+        $scr definescreen
+    }
 }
 
 # event loop
