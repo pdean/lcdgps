@@ -26,7 +26,7 @@ check speed in nav
 
 check offset in tmr
 
-tidy plugin setup
+add plugin configs at top of lcdgps
 
 add menu for enabling/disabling plugins
 
