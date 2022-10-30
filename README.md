@@ -20,15 +20,10 @@ inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the c
 
 ## todo
 
-fix service file - make sure usb is mounted
-
-check speed in nav
-
-check offset in tmr
-
-add menu for enabling/disabling plugins
-
-or ini file?
-
-leds?
-
+- fix service file - make sure usb is mounted
+- check speed in nav
+- check offset in tmr
+- add menu for enabling/disabling plugins
+- ini file
+- led function?
+- logger
