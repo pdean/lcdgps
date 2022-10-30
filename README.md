@@ -1,4 +1,5 @@
-# lcdgps
+lcdgps
+======
 requires 
 raspberry pi 4,
 preferably [arch linux](https://archlinuxarm.org/platforms/armv8/broadcom/raspberry-pi-4), 
@@ -18,17 +19,12 @@ gps mouse usb,
 
 inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the code will make you vomit
 
-## todo
-
-fix service file - make sure usb is mounted
-
-check speed in nav
-
-check offset in tmr
-
-add menu for enabling/disabling plugins
-
-or ini file?
-
-leds?
-
+todo
+-------
+- fix service file - make sure usb is mounted
+- check speed in nav
+- check offset in tmr
+- add menu for enabling/disabling plugins
+- ini file
+- led function?
+- logger
