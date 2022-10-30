@@ -6,6 +6,7 @@
 # screens to display
 
 set screens [list nav tmr]
+set navfile /mnt/usb/nav.kml
 
 # load modules
 

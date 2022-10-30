@@ -12,7 +12,7 @@ oo::objdefine nav {
     method initvars {} {
 
         set scr [string trim [self] :]
-        set file /mnt/usb/nav.kml
+        set file $::navfile
         set loaded [my makedb $file]
 
         if {$loaded} {
