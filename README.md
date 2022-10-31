@@ -22,6 +22,7 @@ inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the c
 
 todo
 -------
+- multiple nav screens
 - fix service file - make sure usb is mounted
 - check speed in nav
 - check offset in tmr
