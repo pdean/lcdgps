@@ -1,3 +1,4 @@
+
 lcdgps
 ======
 requires 
@@ -24,7 +25,8 @@ todo
 - fix service file - make sure usb is mounted
 - check speed in nav
 - check offset in tmr
-- add menu for enabling/disabling plugins
 - ini file
-- led function?
+- led functions
+- [power button](https://embeddedcomputing.com/technology/open-source/development-kits/raspberry-pi-power-up-and-shutdown-with-a-physical-button)
+- add menu for enabling/disabling plugins
 - logger
