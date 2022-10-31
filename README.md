@@ -22,12 +22,12 @@ inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the c
 
 todo
 -------
+- ini file
 - multiple nav screens
-- fix service file - make sure usb is mounted
 - check speed in nav
 - check offset in tmr
-- ini file
 - led functions
+- fix service file - make sure usb is mounted
 - [power button](https://embeddedcomputing.com/technology/open-source/development-kits/raspberry-pi-power-up-and-shutdown-with-a-physical-button)
 - add menu for enabling/disabling plugins
 - logger
