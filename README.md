@@ -22,6 +22,7 @@ inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the c
 
 todo
 -------
+- alert screen?
 - ini file
 - multiple nav screens
 - check speed in nav
