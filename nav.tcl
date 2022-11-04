@@ -149,9 +149,9 @@ oo::objdefine nav {
                         set vehicle [format "%.0f m/s  %s" $speed [ compass $track]]
                         set point [format "%.0f m %s" $dist [ compass $brg]]
                         #lcd puts "widget_set $scr ${scr}1 1 1 {$vehicle}"
-                        set desc "$name $description * "
+                        set desc "$name $description"
                         lcd puts "widget_set $scr ${scr}2 1 2 {$vehicle}"
-                        lcd puts "widget_set $scr ${scr}3 1 3 20 3 m 1 {$desc}"
+                        lcd puts "widget_set $scr ${scr}3 1 3 20 3 h 2 {$desc}"
                         lcd puts "widget_set $scr ${scr}4 1 4 {$point}"
                     } else {
                         lcd puts "widget_set $scr ${scr}2 1 2 NO PTS FD"
