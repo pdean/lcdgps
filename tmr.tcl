@@ -48,7 +48,9 @@ oo::objdefine tmr {
                     lassign [split $time T] date time
                     lassign [split $description |] sec desc
                     set chos [format "%.3f km  %.0f m" $ch $os]
-                    lcd puts "widget_set $scr ${scr}1 1 1 {$time}"
+                    set vehicle [format "%.0f m/s  %s" $speed [ compass $track]]
+                    lcd puts "widget_set $scr ${scr}1 1 1 {$vehicle}"
+                    #lcd puts "widget_set $scr ${scr}1 1 1 {$time}"
                     lcd puts "widget_set $scr ${scr}2 1 2 {$desc}"
                     lcd puts "widget_set $scr ${scr}3 1 3 {$sec}"
                     lcd puts "widget_set $scr ${scr}4 1 4 {$chos}"
