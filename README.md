@@ -23,9 +23,9 @@ inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the c
 todo
 -------
 - alert screen
-- namespaces
+- ~~namespaces~~
 - ini file
-- multiple nav screens
+- ~~multiple nav screens~~
 - check speed in nav
 - check offset in tmr
 - led functions
