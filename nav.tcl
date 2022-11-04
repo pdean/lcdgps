@@ -37,11 +37,15 @@ oo::objdefine nav {
         }]
 
         set loads 0
-        set files [list northey.kml victoria.kml]
+        set dir $::datadir
+        set fof [file join $dir fof.txt]
+        set in [open $fof r]
+        set files [split [read -nonewline $in] \n]
+        puts $files
 
         foreach f $files {
             set scr [file root $f]
-            set file [file join usb $f]
+            set file [file join $dir $f]
             set loaded [my makedb $file $scr]
             if {$loaded} {
                 incr loads

@@ -6,8 +6,8 @@
 # screens to display 
 #### global variables are nasty ####
 
+set datadir usb
 set screens [list nav tmr]
-set navfile /mnt/usb/nav.kml
 
 # load modules
 
