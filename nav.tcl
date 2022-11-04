@@ -55,7 +55,7 @@ oo::objdefine nav {
                 lcd puts "widget_add $scr title title"
                 lcd puts "widget_set $scr title {$scr}"
                 lcd puts "widget_add $scr ${scr}2 string"
-                lcd puts "widget_add $scr ${scr}3 string"
+                lcd puts "widget_add $scr ${scr}3 scroller"
                 lcd puts "widget_add $scr ${scr}4 string"
             }
         }
@@ -149,23 +149,18 @@ oo::objdefine nav {
                         set vehicle [format "%.0f m/s  %s" $speed [ compass $track]]
                         set point [format "%.0f m %s" $dist [ compass $brg]]
                         #lcd puts "widget_set $scr ${scr}1 1 1 {$vehicle}"
-                        lcd puts "widget_set $scr ${scr}2 1 2 {$name}"
-                        lcd puts "widget_set $scr ${scr}3 1 3 {$description}"
+                        set desc "$name $description * "
+                        lcd puts "widget_set $scr ${scr}2 1 2 {$vehicle}"
+                        lcd puts "widget_set $scr ${scr}3 1 3 20 3 m 1 {$desc}"
                         lcd puts "widget_set $scr ${scr}4 1 4 {$point}"
                     } else {
-                        lcd puts "widget_set $scr ${scr}2 1 2 NO"
-                        lcd puts "widget_set $scr ${scr}3 1 3 PTS"
-                        lcd puts "widget_set $scr ${scr}4 1 4 FD"
+                        lcd puts "widget_set $scr ${scr}2 1 2 NO PTS FD"
                     }
                 } else {
-                    lcd puts "widget_set $scr ${scr}2 1 2 NO"
-                    lcd puts "widget_set $scr ${scr}3 1 3 FIX"
-                    lcd puts "widget_set $scr ${scr}4 1 4 { }"
+                    lcd puts "widget_set $scr ${scr}2 1 2 NO FIX"
                 }
             } else {
-                lcd puts "widget_set $scr ${scr}2 1 2 NO"
-                lcd puts "widget_set $scr ${scr}3 1 3 GPS?"
-                lcd puts "widget_set $scr ${scr}4 1 4 { }"
+                lcd puts "widget_set $scr ${scr}2 1 2 NO GPS?"
             }
         }
     }
