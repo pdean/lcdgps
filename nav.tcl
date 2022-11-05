@@ -40,6 +40,7 @@ oo::objdefine nav {
         set fof [file join $dir fof.txt]
         set in [open $fof r]
         set files [split [read -nonewline $in] \n]
+        close $in
         puts $files
 
         foreach f $files {
