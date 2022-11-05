@@ -23,10 +23,9 @@ inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the c
 todo
 -------
 - alert screen
-- ~~namespaces~~
-- ini file ie a file of files
-- scroller for name/desc and tmr road
-- show speed on each screen
+- ~~ini file ie a file of files~~
+- ~~scroller for name/desc and tmr road~~
+- ~~show speed on each screen~~
 - ~~multiple nav screens~~
 - check speed in nav
 - check offset in tmr
