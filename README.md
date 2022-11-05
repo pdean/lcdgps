@@ -18,7 +18,7 @@ gps mouse usb,
 [tcl](https://www.tcl.tk/)
 
 
-inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the code will make you vomit
+inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi)
 
 todo
 -------
