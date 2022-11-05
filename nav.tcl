@@ -15,7 +15,6 @@ oo::class create Nav {
 oo::object create nav
 
 oo::objdefine nav {
-
     variable dbpoint findnext findclose loads
 
     method definescreen {} {
@@ -59,7 +58,6 @@ oo::objdefine nav {
                 lcd puts "widget_add $scr ${scr}4 string"
             }
         }
-
 
         if {$loads} {
             db allrows { 
@@ -119,48 +117,46 @@ oo::objdefine nav {
             $dbpoint allrows \
                     [dict create name $desc desc $name scr $scr lat $lat lon $lon]
         }
-
         return 1
     }
 
     method updatescreen {tpv scr} {
-        dict with tpv {
-            if {[info exists mode]} {
-                if {$mode >= 2} {
-                    lassign [$findnext allrows \
-                        [dict create lat $lat lon $lon scr $scr track $track]] res
-                    if {[llength $res]} {
-                        dict with res {}
-                        if {$dist < 300} {
-                            blue blink
-                        } else {
-                            blue off
-                        }
-                        if {$dist < 200} {
-                            green blink
-                        } else {
-                            green off
-                        }
-                        if {$dist < 100} {
-                            red blink
-                        } else {
-                            red off
-                        }
-                        set vehicle [format "speed %.0f m/s  %s" $speed [ compass $track]]
-                        set point [format "dist %.0fm %s" $dist [ compass $brg]]
-                        set desc "$name $description"
-                        lcd puts "widget_set $scr ${scr}2 1 2 {$vehicle}"
-                        lcd puts "widget_set $scr ${scr}3 1 3 20 3 h 2 {$desc}"
-                        lcd puts "widget_set $scr ${scr}4 1 4 {$point}"
+        dict with tpv {}
+        if {[info exists mode]} {
+            if {$mode >= 2} {
+                lassign [$findnext allrows \
+                    [dict create lat $lat lon $lon scr $scr track $track]] res
+                if {[llength $res]} {
+                    dict with res {}
+                    if {$dist < 300} {
+                        blue blink
                     } else {
-                        lcd puts "widget_set $scr ${scr}2 1 2 NO PTS FD"
+                        blue off
                     }
+                    if {$dist < 200} {
+                        green blink
+                    } else {
+                        green off
+                    }
+                    if {$dist < 100} {
+                        red blink
+                    } else {
+                        red off
+                    }
+                    set vehicle [format "speed %.0f m/s  %s" $speed [ compass $track]]
+                    set point [format "dist %.0fm %s" $dist [ compass $brg]]
+                    set desc "$name $description"
+                    lcd puts "widget_set $scr ${scr}2 1 2 {$vehicle}"
+                    lcd puts "widget_set $scr ${scr}3 1 3 20 3 h 2 {$desc}"
+                    lcd puts "widget_set $scr ${scr}4 1 4 {$point}"
                 } else {
-                    lcd puts "widget_set $scr ${scr}2 1 2 NO FIX"
+                    lcd puts "widget_set $scr ${scr}2 1 2 NO PTS FD"
                 }
             } else {
-                lcd puts "widget_set $scr ${scr}2 1 2 NO GPS?"
+                lcd puts "widget_set $scr ${scr}2 1 2 NO FIX"
             }
+        } else {
+            lcd puts "widget_set $scr ${scr}2 1 2 NO GPS?"
         }
     }
 }
