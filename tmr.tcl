@@ -9,7 +9,7 @@ oo::objdefine tmr {
 
     method initvars {} {
 
-        set scr [string trim [self] :]
+        set scr [namespace tail [self]]
 
         set pt2ch [db prepare {
             SELECT (d1 * cos(b1-b0)/1000 + tstart ) as ch,
