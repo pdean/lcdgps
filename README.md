@@ -22,6 +22,7 @@ inspired by [cacheberry-pi](https://github.com/jclement/Cacheberry-Pi) but the c
 
 todo
 -------
+- run off usb
 - alert screen
 - ~~ini file ie a file of files~~
 - ~~scroller for name/desc and tmr road~~
