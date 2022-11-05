@@ -46,25 +46,18 @@ oo::objdefine tmr {
                     lassign [$pt2ch allrows [dict create lat $lat lon $lon]] res
                     dict with res {}
                     lassign [split $time T] date time
-                    lassign [split $description |] sec desc
+                    #lassign [split $description |] sec desc
                     set chos [format "%.3f km  %.0f m" $ch $os]
                     set vehicle [format "%.0f m/s  %s" $speed [ compass $track]]
-                    lcd puts "widget_set $scr ${scr}1 1 1 {$vehicle}"
                     #lcd puts "widget_set $scr ${scr}1 1 1 {$time}"
-                    lcd puts "widget_set $scr ${scr}2 1 2 {$desc}"
-                    lcd puts "widget_set $scr ${scr}3 1 3 {$sec}"
+                    lcd puts "widget_set $scr ${scr}2 1 2 {$vehicle}"
+                    lcd puts "widget_set $scr ${scr}3 1 3 20 3 h 2 {$description}"
                     lcd puts "widget_set $scr ${scr}4 1 4 {$chos}"
                 } else {
-                    lcd puts "widget_set $scr ${scr}1 1 1 NO"
-                    lcd puts "widget_set $scr ${scr}2 1 2 FIX"
-                    lcd puts "widget_set $scr ${scr}3 1 3 { }"
-                    lcd puts "widget_set $scr ${scr}4 1 4 { }"
+                    lcd puts "widget_set $scr ${scr}2 1 2 {NO FIX}"
                 }
             } else {
-                lcd puts "widget_set $scr ${scr}1 1 1 NO"
-                lcd puts "widget_set $scr ${scr}2 1 2 GPS?"
-                lcd puts "widget_set $scr ${scr}3 1 3 { }"
-                lcd puts "widget_set $scr ${scr}4 1 4 { }"
+                lcd puts "widget_set $scr ${scr}2 1 2 {NO GPS?}"
             }
         }
     }
@@ -74,10 +67,12 @@ oo::objdefine tmr {
         my initvars
 
         lcd puts "screen_add $scr"
-        lcd puts "screen_set $scr -heartbeat off"
-        lcd puts "widget_add $scr ${scr}1 string"
+        #lcd puts "screen_set $scr -heartbeat off"
+        lcd puts "widget_add $scr title title"
+        lcd puts "widget_set $scr title {tmr roadloc}"
+        #lcd puts "widget_add $scr ${scr}1 string"
         lcd puts "widget_add $scr ${scr}2 string"
-        lcd puts "widget_add $scr ${scr}3 string"
+        lcd puts "widget_add $scr ${scr}3 scroller"
         lcd puts "widget_add $scr ${scr}4 string"
     }
 
