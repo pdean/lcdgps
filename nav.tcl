@@ -151,13 +151,13 @@ oo::objdefine nav {
                     lcd puts "widget_set $scr ${scr}3 1 3 20 3 h 2 {$desc}"
                     lcd puts "widget_set $scr ${scr}4 1 4 {$point}"
                 } else {
-                    lcd puts "widget_set $scr ${scr}2 1 2 NO PTS FD"
+                    lcd puts "widget_set $scr ${scr}2 1 2 {NO PTS FD}"
                 }
             } else {
-                lcd puts "widget_set $scr ${scr}2 1 2 NO FIX"
+                lcd puts "widget_set $scr ${scr}2 1 2 {NO FIX}"
             }
         } else {
-            lcd puts "widget_set $scr ${scr}2 1 2 NO GPS?"
+            lcd puts "widget_set $scr ${scr}2 1 2 {NO GPS?}"
         }
     }
 }
