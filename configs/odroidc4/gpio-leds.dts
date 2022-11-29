@@ -1,0 +1,32 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/meson-g12a-gpio.h>
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+    fragment@0 {
+        target-path = "/";
+
+        __overlay__ {
+		leds {
+			compatible = "gpio-leds";
+			status = "okay";
+
+			red {
+				gpios = <&gpio GPIOX_14 0>;
+			};
+
+			yellow {
+				gpios = <&gpio GPIOX_15 0>;
+			};
+
+			green {
+				gpios = <&gpio GPIOX_6 0>;
+			};
+		};
+
+        };
+    };
+};
+
