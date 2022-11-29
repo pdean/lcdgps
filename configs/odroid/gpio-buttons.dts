@@ -1,0 +1,31 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/meson-g12a-gpio.h>
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+    fragment@0 {
+        target-path = "/";
+
+        __overlay__ {
+             buttons {
+		status = "okay";
+                compatible = "gpio-keys";
+               
+                button@0 {
+                    label = "GPIO Key ENT";
+                    linux,code = <28>;
+                    gpios = <&gpio GPIOX_0 0>;
+                };
+
+                button@1 {
+                    label = "GPIO Key ESC";
+                    linux,code = <1>;
+                    gpios = <&gpio GPIOX_11 0>;
+                };
+            };
+        };
+    };
+};
+

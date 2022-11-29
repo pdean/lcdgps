@@ -1,0 +1,23 @@
+/dts-v1/;
+/plugin/;
+
+#include <dt-bindings/gpio/meson-g12a-gpio.h>
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+    fragment@0 {
+        target-path = "/";
+
+        __overlay__ {
+             rotary {
+		status = "okay";
+                compatible = "rotary-encoder";
+	        gpios = <&gpio GPIOX_1 0>,<&gpio GPIOX_2 0>;
+		linux,axis = <1>;
+		rotary-encoder,relative-axis;
+		rotary-encoder,encoding = "gray";
+            };
+        };
+    };
+};
+
