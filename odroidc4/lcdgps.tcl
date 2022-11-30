@@ -6,7 +6,7 @@
 # screens to display 
 #### global variables are nasty ####
 
-set datadir /mnt/usb
+set datadir /media/usb
 set screens [list nav tmr]
 
 # load modules
