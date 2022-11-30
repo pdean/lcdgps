@@ -14,6 +14,10 @@ dtoverlay=rotary-encoder,pin_a=21,pin_b=20,relative_axis=1
 dtoverlay=gpio-key,gpio=16,label=ENT,keycode=28
 dtoverlay=gpio-key,gpio=19,label=ESC,keycode=1
 
+#dtoverlay=gpio-led,gpio=5,label=blue
+#dtoverlay=gpio-led,gpio=6,label=green
+#dtoverlay=gpio-led,gpio=13,label=red
+
 [pi4]
 # Run as fast as firmware / board allows
 arm_boost=1
