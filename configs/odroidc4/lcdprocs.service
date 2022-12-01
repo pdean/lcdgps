@@ -1,0 +1,15 @@
+[Unit]
+Description=LCD sample progs
+Requires=lcdproc.service
+After=lcdproc.service
+
+
+[Service]
+User=root
+Type=forking
+ExecStart=/usr/bin/lcdproc -c /etc/lcdproc.conf
+
+[Install]
+WantedBy=multi-user.target
+
+
