@@ -1,9 +1,11 @@
 # led
 
 oo::class create Led {
+    variable Blinking
 
     constructor {} {
         my off
+        set Blinking 0
     }
     
     method Brightness {val} {
@@ -29,11 +31,15 @@ oo::class create Led {
     }
     
     method blink {} {
-        my Trigger timer
+        if {!$Blinking} {
+            my Trigger timer
+            set Blinking 1
+        }
     }
 
     method noblink {} {
         my Trigger none
+        set Blinking 0
     }
 }
 

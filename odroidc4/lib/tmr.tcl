@@ -27,7 +27,7 @@ oo::objdefine tmr {
                     ST_Distance(ST_Startpoint(s.geog::geometry)::geography, p.geog) as d1,
                     ST_Azimuth(ST_Startpoint(s.geog::geometry)::geography, p.geog) as b1
                 FROM
-                    tmr3.segs as s
+                    tmr.segs as s
                 CROSS JOIN
                    (SELECT ST_Setsrid(ST_Point(:lon,:lat),4283)::geography as geog) as p
                 WHERE left(code,1) = any(string_to_array('123AKQ', NULL))
