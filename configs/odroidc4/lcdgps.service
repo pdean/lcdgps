@@ -1,0 +1,12 @@
+[Unit]
+Description=lcdgps
+Requires=lcdproc.service gpsd.service
+After=lcdproc.service gpsd.service
+
+[Service]
+ExecStart=/usr/bin/tclsh /home/peter/git/lcdgps/odroidc4/lcdgps.tcl
+WorkingDirectory=/home/peter/git/lcdgps/odroidc4
+
+[Install]
+WantedBy=multi-user.target
+
