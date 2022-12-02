@@ -1,23 +1,37 @@
 # See /boot/overlays/README for all available options
 
 dtoverlay=vc4-kms-v3d
-#dtoverlay=gpio-fan,gpiopin=14,temp=65000
 initramfs initramfs-linux.img followkernel
 
-dtparam=audio=on
+# Uncomment to enable bluetooth
+#dtparam=krnbt=on
 
-device_tree_param=spi=on
+# fan
+#dtoverlay=gpio-fan,gpiopin=14,temp=65000
+
+# shutdown button
+#dtoverlay=gpio-shutdown
+
+# serial console
+dtoverlay=disable-bt
+enable_uart=1
+
+# spidev
+#device_tree_param=spi=on
+
+dtoverlay=rotary-encoder,pin_a=16,pin_b=20,relative_axis=1
+dtoverlay=gpio-key,gpio=12,label=ENT,keycode=28
+dtoverlay=gpio-key,gpio=18,label=ESC,keycode=1
+
+dtoverlay=gpio-led,gpio=13,label=green
+dtoverlay=gpio-led,gpio=19,label=yellow
+dtoverlay=gpio-led,gpio=26,label=red
+
+
 dtparam=i2c_arm=on
 dtoverlay=i2c-rtc,pcf8523
-
-dtoverlay=rotary-encoder,pin_a=21,pin_b=20,relative_axis=1
-dtoverlay=gpio-key,gpio=16,label=ENT,keycode=28
-dtoverlay=gpio-key,gpio=19,label=ESC,keycode=1
-
-#dtoverlay=gpio-led,gpio=5,label=blue
-#dtoverlay=gpio-led,gpio=6,label=green
-#dtoverlay=gpio-led,gpio=13,label=red
 
 [pi4]
 # Run as fast as firmware / board allows
 arm_boost=1
+
