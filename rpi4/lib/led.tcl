@@ -1,47 +1,48 @@
 # led
 
-package require piio
-
 oo::class create Led {
-    variable Pin Script Blinking
+    variable Blinking
 
-    constructor {pin} {
-        set Pin $pin
-        piio function $pin output
-        set Blinking 0
-        set Script {}
+    constructor {} {
         my off
+        set Blinking 0
     }
-
+    
+    method Brightness {val} {
+	set fid [open /sys/class/leds/[namespace tail [self]]/brightness w]
+	puts -nonewline $fid $val
+	close $fid
+    }
+    
+    method Trigger {val} {
+	set fid [open /sys/class/leds/[namespace tail [self]]/trigger w]
+	puts -nonewline $fid $val
+	close $fid
+    }
+    
     method on {} {
-        my Noblink
-        piio output $Pin 1
+        my noblink
+        my Brightness 1
     }
-
+    
     method off {} {
-        my Noblink
-        piio output $Pin 0
+        my noblink
+        my Brightness 0
     }
-
+    
     method blink {} {
         if {!$Blinking} {
+            my Trigger timer
             set Blinking 1
-            my blinker
         }
     }
 
-    method blinker {{state 1}} {
-        piio output $Pin $state 
-        set Script [after 500 [list [self object] blinker [expr {!$state}]]]
-    }
-
-    method Noblink {} {
-        if {$Blinking} {
-            after cancel $Script
-            set Script {}
-            set Blinking 0
-        }
+    method noblink {} {
+        my Trigger none
+        set Blinking 0
     }
 }
 
 package provide led 1.0
+
+# vim: set sts=4 sw=4 tw=80 et ft=tcl:

@@ -17,9 +17,9 @@ package require lcd
 package require gps
 package require led
 
-Led create yellow 19
-Led create green  13
-Led create red 26
+Led create yellow
+Led create green
+Led create red
 
 # database
 
