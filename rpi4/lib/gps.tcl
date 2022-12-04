@@ -24,7 +24,7 @@ oo::objdefine gps {
         dict with data {}
         if {$class eq "POLL"} {
             if {[info exists tpv]} {
-                {*}$Script [lindex $tpv end]
+                tailcall {*}$Script [lindex $tpv end]
             }
         } else {
             puts $data
