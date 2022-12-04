@@ -26,11 +26,11 @@ oo::objdefine lcd {
             }
             listen {
                 set Screen [lindex $line 1]
-                {*}$Onlisten
+                tailcall {*}$Onlisten
             }
             ignore {
                 set Screen {}
-                {*}$Onignore
+                tailcall {*}$Onignore
             }
             success { }
             default {
