@@ -8,7 +8,7 @@ oo::class create Nav {
         puts "created [self]"
     }
     method updatescreen {tpv} {
-        nav updatescreen $tpv [namespace tail [self]]
+        tailcall nav updatescreen $tpv [namespace tail [self]]
     }
 }
 
