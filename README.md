@@ -4,6 +4,7 @@ lcdgps
 requires 
 raspberry pi 4 (or odroid c4) ,
 [lcd 20x4](https://www.adafruit.com/product/198),
+[i2c backpack](https://core-electronics.com.au/i2c-lcd-backpack-for-1602-to-2004-lcds.html),
 [rotary encoder with button](https://www.adafruit.com/product/377), 
 extra button as menu button,
 [rtc](https://www.adafruit.com/product/3295),
