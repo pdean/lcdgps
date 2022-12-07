@@ -1,11 +1,11 @@
 [Unit]
 Description=lcdgps
-Requires=lcdd.service gpsd.service
-After=lcdd.service gpsd.service
+Requires=lcdd.service gpsd.service postgresql.service
+After=lcdd.service gpsd.service postgresql.service
 
 [Service]
-ExecStart=/usr/bin/tclsh /home/peter/git/lcdgps/lcdgps.tcl
-WorkingDirectory=/home/peter/git/lcdgps
+ExecStart=/usr/bin/tclsh /home/peter/tcl/lcdgps/lcdgps.tcl
+WorkingDirectory=/home/peter/tcl/lcdgps
 
 [Install]
 WantedBy=multi-user.target
