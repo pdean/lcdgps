@@ -1,6 +1,6 @@
 [Unit]
 Description=evsieve client
-After=syslog.target network.target
+#After=syslog.target network.target
 
 [Service]
 Type=notify
@@ -10,7 +10,7 @@ ExecStart=/usr/local/bin/evsieve \
     --map rel:y:1 key:up:1 key:up:0 \
     --input /dev/input/by-path/platform-buttons-event \
 #    --input /dev/input/by-id/usb-Logitech_USB_Receiver-if01-event-kbd \
-    --output create-link=/dev/input/by-id/virtual
+    --output create-link=/dev/input/by-path/virtual
 
 [Install]
 WantedBy=multi-user.target
