@@ -1,7 +1,7 @@
 [Unit]
 Description=lcdgps
-Requires=lcdproc.service gpsd.service
-After=lcdproc.service gpsd.service
+Requires=lcdd.service gpsd.service postgresql.service
+After=lcdd.service gpsd.service postgresql.service
 
 [Service]
 ExecStart=/usr/bin/tclsh /home/peter/git/lcdgps/odroidc4/lcdgps.tcl
