@@ -1,0 +1,35 @@
+begin
+prog = lcdd
+button = KEY_UP
+config = Up
+end
+
+begin
+prog = lcdd
+button = KEY_LEFT
+config = Left
+end
+
+begin
+prog = lcdd
+button = KEY_RIGHT
+config = Right
+end
+
+begin
+prog = lcdd
+button = KEY_DOWN
+config = Down
+end
+
+begin
+prog = lcdd
+button = KEY_MENU
+config = Escape
+end
+
+begin
+prog = lcdd
+button = KEY_ENTER
+config = Enter
+end
