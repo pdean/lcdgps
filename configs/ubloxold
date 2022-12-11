@@ -1,3 +1,4 @@
+#!/bin/sh
 export UBXOPTS="-P 14"
 ubxtool -p RESET
 ubxtool -S 115200
