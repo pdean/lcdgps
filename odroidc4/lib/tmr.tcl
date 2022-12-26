@@ -47,6 +47,9 @@ oo::objdefine tmr {
 
     method updatescreen {tpv} {
         dict with tpv {}
+        if {![info exists track]} {
+            set track 0.0
+        }
         if {[info exists mode]} {
             if {$mode >= 2} {
                 lassign [$pt2ch allrows [dict create lat $lat lon $lon]] res

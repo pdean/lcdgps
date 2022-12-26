@@ -123,6 +123,9 @@ oo::objdefine nav {
 
     method updatescreen {tpv scr} {
         dict with tpv {}
+        if {![info exists track]} {
+            set track 0.0
+        }
         if {[info exists mode]} {
             if {$mode >= 2} {
                 lassign [$findnext allrows \
