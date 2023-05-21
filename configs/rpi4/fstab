@@ -1,0 +1,16 @@
+# Static information about the filesystems.
+# See fstab(5) for details.
+
+# <file system> <dir> <type> <options> <dump> <pass>
+/dev/mmcblk0p1  /boot   vfat    defaults        0       0
+
+#qnap.local:/	/mnt/qnap  nfs 	defaults,timeo=900,retrans=5,_netdev	0	0
+#qnap.local:/Public /mnt/qnap/public nfs defaults,timeo=900,retrans=5,_netdev 0 0
+#qnap.local:/backup /mnt/qnap/backup nfs defaults,timeo=900,retrans=5,_netdev 0 0
+#qnap.local:/Multimedia /mnt/qnap/multimedia nfs defaults,timeo=900,retrans=5,_netdev 0 0
+qnap.local:/Public /mnt/qnap/public nfs _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+qnap.local:/backup /mnt/qnap/backup nfs _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+qnap.local:/nextcloud /mnt/qnap/nextcloud nfs _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+qnap.local:/Multimedia /mnt/qnap/multimedia nfs _netdev,noauto,x-systemd.automount,x-systemd.mount-timeout=10,timeo=14,x-systemd.idle-timeout=1min 0 0
+
+/dev/sda1  /mnt/usb  vfat  rw,users,umask=0,noauto,nofail,x-systemd.automount,x-systemd.idle-timeout=2,x-systemd.device-timeout=2 0 0
